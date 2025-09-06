@@ -12,7 +12,7 @@
             "program": "${workspaceRoot}/odoo/odoo-bin",
             "args": [
                 "-c",
-                "${workspaceFolder}/odoo.conf"
+                "${workspaceFolder}/odoo.conf",
             ],
             "gevent": false,            
             "console": "integratedTerminal",

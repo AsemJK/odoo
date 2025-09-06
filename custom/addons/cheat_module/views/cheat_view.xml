@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Tree View -->
+        <record id="view_cheat_tree" model="ir.ui.view">
+            <field name="name">cheat.tree</field>
+            <field name="model">cheat.cheat</field>
+            <field name="arch" type="xml">
+                <tree string="Cheats">
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="view_cheat_form" model="ir.ui.view">
+            <field name="name">cheat.form</field>
+            <field name="model">cheat.cheat</field>
+            <field name="arch" type="xml">
+                <form string="Cheat">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                            <field name="active"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Search View -->
+        <record id="view_cheat_search" model="ir.ui.view">
+            <field name="name">cheat.search</field>
+            <field name="model">cheat.cheat</field>
+            <field name="arch" type="xml">
+                <search string="Search Cheats">
+                    <field name="name"/>
+                    <field name="description"/>
+                    <filter string="Active" name="active" domain="[('active','=',True)]"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_cheat" model="ir.actions.act_window">
+            <field name="name">Cheats</field>
+            <field name="res_model">cheat.cheat</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_cheat_search"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create your first cheat!
+                </p>
+            </field>
+        </record>
+
+        <!-- Menu -->
+        <menuitem id="menu_cheat_root" 
+                  name="Cheats" 
+                  sequence="10"/>
+
+        <menuitem id="menu_cheat_main" 
+                  name="Cheats"
+                  parent="menu_cheat_root"
+                  action="action_cheat"
+                  sequence="1"/>
+    </data>
+</odoo>
