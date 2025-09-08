@@ -13,6 +13,7 @@
             "args": [
                 "-c",
                 "${workspaceFolder}/odoo.conf",
+                "-u estate_construction_consultant"
             ],
             "gevent": false,            
             "console": "integratedTerminal",
