@@ -18,4 +18,5 @@ class Contract(models.Model):
     client_signature = fields.Char(string='Client Signature', required=True)
     date_signed = fields.Date(string='Date Signed', required=True)
     date_confirmed = fields.Date(string='Date Confirmed', required=True)
+    active = fields.Boolean(string='Active', default=True)
 
