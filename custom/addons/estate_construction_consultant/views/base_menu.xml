@@ -1,9 +1,11 @@
 <odoo>
-    <menuitem id="menu_construction_consultant" name="Construction Consultant" sequence="9" />
+    <menuitem id="menu_construction_consultant" name="Construction Consultant" />
 
-    <menuitem id="menu_agent" name="Agents" parent="menu_construction_consultant" sequence="10" />
-    <menuitem id="menu_contract" name="Contracts" parent="menu_construction_consultant" sequence="20" />
-    <menuitem id="menu_property" name="Properties" parent="menu_construction_consultant" sequence="30" />
-    <menuitem id="menu_sale" name="Sales" parent="menu_construction_consultant" sequence="40" />
+    <!-- <menuitem id="menu_agent" name="Agents" parent="menu_construction_consultant" /> -->
+    <menuitem id="menu_contract" 
+    name="Contracts" 
+    parent="menu_construction_consultant" />
+    <!-- <menuitem id="menu_property" name="Properties" parent="menu_construction_consultant" /> -->
+    <!-- <menuitem id="menu_sale" name="Sales" parent="menu_construction_consultant" /> -->
 
 </odoo>
