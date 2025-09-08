@@ -1,0 +1,15 @@
+<odoo>
+<record id="menu_contract_action" model="ir.actions.act_window">
+    <field name="name">Contracts</field>
+    <field name="res_model">estate.contract</field>
+    <field name="view_mode">tree,form</field>
+    <field name="domain">[('type','=','contract')]</field>
+</record>
+<menuitem
+    id="menu_contract_contracts"
+    name="Contracts"
+    parent="menu_contract"
+    action="action_contract"
+    sequence="10"/>    
+
+</odoo>
