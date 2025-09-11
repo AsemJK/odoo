@@ -13,7 +13,7 @@
             "args": [
                 "-c",
                 "${workspaceFolder}/odoo.conf",
-                "-u estate_construction_consultant"
+                // "--dev=xml",
             ],
             "gevent": false,            
             "console": "integratedTerminal",

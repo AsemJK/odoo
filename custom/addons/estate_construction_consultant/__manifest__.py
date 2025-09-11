@@ -7,9 +7,9 @@
     'author': 'Asem',
     'depends': ['base'],
     'data': [
-        'views/base_menu.xml',
-        'views/contract_menu.xml',
         'security/ir.model.access.csv',
+        'views/base_menu.xml',
+        'views/contract_view.xml',
     ],
     'application': True,
     'installable': True,

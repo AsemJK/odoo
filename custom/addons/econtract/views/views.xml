@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="econtract.list">
+      <field name="name">econtract list</field>
+      <field name="model">econtract.econtract</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </list>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="econtract.action_window">
+      <field name="name">econtract window</field>
+      <field name="res_model">econtract.econtract</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+
+    <record model="ir.actions.server" id="econtract.action_server">
+      <field name="name">econtract server</field>
+      <field name="model_id" ref="model_econtract_econtract"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "list,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="econtract" id="econtract.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Menu 1" id="econtract.menu_1" parent="econtract.menu_root"/>
+    <menuitem name="Menu 2" id="econtract.menu_2" parent="econtract.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="List" id="econtract.menu_1_list" parent="econtract.menu_1"
+              action="econtract.action_window"/>
+    <menuitem name="Server to list" id="econtract" parent="econtract.menu_2"
+              action="econtract.action_server"/>
+
+  </data>
+</odoo>

@@ -1,22 +1,22 @@
-from odoo import models, fields, api
+from odoo import _ ,models, fields, api
 
 class Contract(models.Model):
-    _name = 'estate.contract'
+    _name = 'contract'
     _description = 'Contract'
-    name = fields.Char(string='Name', required=True)
-    date = fields.Date(string='Date', required=True)
-    party_id = fields.Many2one('res.partner', string='Party', required=True)
-    contact_name = fields.Char(string='Contact Name', required=True)
-    contact_number = fields.Char(string='Contact Number', required=True)
+    name = fields.Char(string='Contract Name',required=True)
+    date = fields.Date(string='Date',required=True)
+    party_id = fields.Many2one('res.partner', string='Party',required=True)
+    contact_name = fields.Char(string='Contact Name')
+    contact_number = fields.Char(string='Contact Number')
     contact_type = fields.Selection([
         ('client', 'Client'),
         ('agent', 'Agent'),
         ('consultant', 'Consultant'),
-    ], string='Contact Type', required=True)
-    email = fields.Char(string='Email', required=True)
-    engineer_signature = fields.Char(string='Engineer Signature', required=True)
-    client_signature = fields.Char(string='Client Signature', required=True)
-    date_signed = fields.Date(string='Date Signed', required=True)
-    date_confirmed = fields.Date(string='Date Confirmed', required=True)
+    ], string='Contact Type')
+    email = fields.Char(string='Email')
+    engineer_signature = fields.Char(string='Engineer Signature')
+    client_signature = fields.Char(string='Client Signature')
+    date_signed = fields.Date(string='Date Signed')
+    date_confirmed = fields.Date(string='Date Confirmed')
     active = fields.Boolean(string='Active', default=True)
 
