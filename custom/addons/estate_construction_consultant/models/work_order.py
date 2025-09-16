@@ -20,4 +20,3 @@ class WorkOrder(models.Model):
     date_signed = fields.Date(string='Date Signed')
     date_confirmed = fields.Date(string='Date Confirmed')
     active = fields.Boolean(string='Active', default=True)
-}
